@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <fstream>
+
+class menu{
+private:
+  string name;
+  string contraseña;
+ public:
+  void altatrabajador();
+  void bajatrabajador();
+  void modificartrabajafor();
+  void listartrabajador();
+  void menu principal();  
+};
+void pausa();
+void error();
+void menu::menuprincipal(){
+  int opcion;
+  do{
+  printf("\t\t\tRegistro de trabajador\t\t\t\n");
+  printf("1. Dar de alta trabajador\n\n");
+  printf("2. Listar clientes\n\n");
+  primtf("3. Dar de baja un cliente\n\n");
+  primtf("4. Salir\n\n");
+  scanf(opcion);
+  system(clear);
+  switch(opcion){
+  default:
+      printf("Opcion no valida\n\n");
+      break;
+  case 1:
+    altatrabajador();
+    break;
+  case 2:
+    listartrabajador();
+    break;
+  case 3:
+    bajatrabajador();
+    break;
+  case 4;
+    modificartrabajador();
+    break;
+  case 5:
+    break;
+    }} while (opcion!=6);
+    }
+void menu::altatrabajador(){
+  
+    }
+int main(){
+
+
+}
