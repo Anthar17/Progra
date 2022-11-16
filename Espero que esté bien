@@ -19,6 +19,8 @@ int SumaDigitos(int Num){
 		scanf("%d", &b);
 		
 		do{
+		        if (b==2){
+			break;}
 			int Num;
 			printf("Escribe la fecha del libro (*4 díditos*): ");
 			scanf("%d",&Num);
