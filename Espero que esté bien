@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int SumaDigitos(int Num){
+	int Suma=0, Resto;
+	
+	while(Num!=0){
+		
+		Resto=(Num%10);
+		Suma=(Suma+Resto);
+		Num=(Num/10);
+	}
+	return (Suma);
+	
+}
+	int main(){
+		int Num;
+		printf("Escribe la fecha del libro (*4 díditos*): ");
+		scanf("%d",&Num);
+		
+		printf("la fecha del libro es: %d", Num);
+		printf("\nEl descuento a aplicar para la fecha (%d) es : %d%%\n",Num,SumaDigitos(Num));
+	
+	}
+
+
