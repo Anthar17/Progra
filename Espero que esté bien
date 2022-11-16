@@ -4,8 +4,7 @@
 int SumaDigitos(int Num){
 	int Suma=0, Resto;
 	
-	while(Num!=0){
-		
+	while(Num!=0){	
 		Resto=(Num%10);
 		Suma=(Suma+Resto);
 		Num=(Num/10);
@@ -14,13 +13,18 @@ int SumaDigitos(int Num){
 	
 }
 	int main(){
-		int Num;
-		printf("Escribe la fecha del libro (*4 díditos*): ");
-		scanf("%d",&Num);
+		int b;
 		
-		printf("la fecha del libro es: %d", Num);
-		printf("\nEl descuento a aplicar para la fecha (%d) es : %d%%\n",Num,SumaDigitos(Num));
-	
-	}
-
-
+		printf("¿Quiere ver el descuento del libro?\n 1=Sí\n 2=No\n");
+		scanf("%d", &b);
+		
+		do{
+			int Num;
+			printf("Escribe la fecha del libro (*4 díditos*): ");
+			scanf("%d",&Num);
+			printf("\nEl descuento a aplicar para la fecha (%d) es : %d%%\n",Num,SumaDigitos(Num));
+			break;
+		
+		}
+		while(b==1);	
+		}
