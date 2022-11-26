@@ -32,7 +32,7 @@ scanf("%d", &opc);
 case 1:
 printf("Buscador de libros\n");
 //Funcion de busqueda
-printf("%cQuieres ver otra opci%cn 0/1?\n", 168, 162);
+printf("Ingresa 1 para volver al menu\n");
 scanf("%d", &respuesta);
 if (respuesta==0)
 {
@@ -46,7 +46,7 @@ else{
 case 2:
 printf("Venta de libro\n");
 //Funcion de venta
-printf("%cQuieres ver otra opci%cn 0/1?\n", 168, 162);
+printf("Ingresa 1 para volver al menu\n");
 scanf("%d", &respuesta);
 if (respuesta==0)
 {
@@ -60,7 +60,7 @@ else{
 case 3:
 printf("Compra de libro\n");
 //Funcion de compra
-printf("%cQuieres ver otra opci%cn 0/1?\n", 168, 162);
+printf("Ingresa 1 para volver al menu\n");
 scanf("%d", &respuesta);
 if (respuesta==0)
 {
@@ -74,7 +74,7 @@ else{
 case 4:
 printf("Inventario\n");
 //FUncion de inventario
-printf("%cQuieres ver otra opci%cn 0/1?\n", 168, 162);
+printf("Ingresa 1 para volver al menu\n");
 scanf("%d", &respuesta);
 if (respuesta==0)
 {
@@ -88,7 +88,7 @@ else{
 case 5:
 printf("Reporte diario\n");
 //Funcion reporte
-printf("%cQuieres ver otra opci%cn 0/1?\n", 168, 162);
+printf("Ingresa 1 para volver al menu\n");
 scanf("%d", &respuesta);
 if (respuesta==0)
 {
