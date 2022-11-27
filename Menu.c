@@ -149,7 +149,7 @@ case 6:
     break;  
 
 default:
-    printf("No se encontro esta opci%cn, favor de ingresar otra", 162);
+    printf("No se encontro esta opci%cn, favor de ingresar otra\n", 162);
     break;
 }
 }
