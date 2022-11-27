@@ -3,7 +3,7 @@
 
 int main(){
 
-int opc, respuesta;
+int opc, respuesta, inv, it;
 char usuario[100];
 char contra[100];
 
@@ -72,8 +72,52 @@ else{
     break;
 
 case 4:
-printf("Inventario\n");
+while (inv != 1)
+{
+printf("\nInventario\n");
 //FUncion de inventario
+printf("\n");
+printf("1. Menu selectivo\n");
+printf("2. Alta de libros\n");
+printf("3. Baja de libros\n");
+printf("\n");
+printf("Opci%cn a escoger:\n", 162);
+scanf("%d", &inv);
+
+switch (inv)
+{
+case 1:
+
+break;
+    
+case 2:
+    //Funcion de altas de libros
+    printf("Altas\n");
+    printf("Ingresa 0 para volver a inventario\n");
+    scanf("%d", &it);
+    if (it == 0)
+    {
+        inv=0;
+    }
+    
+    break;
+
+case 3:
+    //Funcion de bajas de libros
+    printf("Bajas\n");
+    printf("Ingresa 0 para volver a inventario\n");
+    scanf("%d", &it);
+    if (it == 0)
+    {
+        inv=0;
+    }
+    break;
+
+default:
+    printf("No se encuentra esta opci%cn, intente otra\n", 162);
+    break;
+}
+}
 printf("Ingresa 1 para volver al menu\n");
 scanf("%d", &respuesta);
 if (respuesta==0)
@@ -82,6 +126,7 @@ if (respuesta==0)
 }
 else{
     opc=opc;
+    inv = 0;
 }
     break;
 
