@@ -1,19 +1,81 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h> 
+#define ENTER 13
+#define BACKSPACE 8
+#define LONGITUD 10
+#define MAX_INTENTOS 3
+#define NUMERO_USUARIOS 4
+
 
 int main(){
 
-int opc, respuesta, inv, it;
-char usuario[100];
-char contra[100];
+char usuario[LONGITUD + 1];
+char clave[LONGITUD + 1];
+int intento = 0;
+int ingresa = 0;
+char caracter;
+int i = 0;
+int j = 0;
 
-printf("Buen dia, ingresa tu nombre de usuario\n");
-gets(usuario);
-printf("Ingresa tu contrase%ca\n",164);
-gets(contra);
-printf("Iniciando sesi%cn, presiona enter para continuar\n",162);
-gets(contra);
-printf("Bienvenido al Menu\n");
+    
+char usuarios[NUMERO_USUARIOS][LONGITUD + 1] = {"Anthar", "Diana", "Daniel", "Astrid"};
+char claves[NUMERO_USUARIOS][LONGITUD + 1] = {"anthar", "diana", "daniel", "astrid"};	
+	do {
+		i = 0;
+		system("cls");
+		printf("\n\t\t\tINICIO DE SESION\n");
+		printf("\t\t\t---------------\n");
+		printf("\n\tUSUARIO: ");
+		gets(usuario);
+		printf("\tCLAVE: ");
+		while (caracter = getch()) {
+			if (caracter == ENTER) {
+				clave[i] = '\0';
+				break;
+				
+			} else if (caracter == BACKSPACE) {
+				if (i > 0) {
+					i--;
+					printf("\b \b");
+				}
+				
+			} else {
+				if (i < LONGITUD) {
+					printf("*");
+					clave[i] = caracter;
+					i++;
+				}
+			}
+		}
+		
+        for (j = 0; j < NUMERO_USUARIOS; ++j) {
+            if (strcmp(usuario, usuarios[j]) == 0 && strcmp(clave, claves[j]) == 0) {
+                ingresa = 1;
+                break;
+                
+            }
+        }
+
+        if (ingresa == 0) {
+            printf("\n\tUsuario y/o clave son incorrectos\n");
+            intento++;
+            getchar();
+        }
+		
+		
+	} while (intento < MAX_INTENTOS && ingresa == 0);
+	
+	if (ingresa == 1) {
+		
+	} else {
+		printf("\n\n\tHa sobrepasado el numero maximo de intentos permitidos\n");
+		exit(1);
+	}
+
+int opc, respuesta, inv, it;
+
+printf("\n-------------------Bienvenido al Menu-------------------\n");
 
 while (opc!=6)
 {
