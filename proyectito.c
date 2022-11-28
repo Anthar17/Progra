@@ -9,6 +9,7 @@
 
 //FUNCIONES
 float ganancia(float n){
+
 	float ganancianeta, ganancia1;
 	int Pa;
 	printf("%cQu%c porcentaje del precio original quisiera agregarle?\n", 168, 130);
@@ -33,8 +34,46 @@ float ganancia(float n){
 	
 }
 
+float venta(int cant, float lib[]){
+    float suma;
+    float actual;
+    for(int i=0; i<cant;i++){
+        actual=lib[i];
+        suma = suma + actual;
+    }
+    printf("El total es: %.2f\n", suma);
+    
+    return suma;
+}
+
+int metodo(int met){
+    int nip;
+    switch (met)
+    {
+    case 1:
+    printf("TARJETA\n");
+    printf("Digita tu nip\n");
+    scanf("%d", &nip);
+    printf("PAGO EXITOSO\n");
+        break;
+    case 2:
+    printf("EFECTIVO\n");
+    printf("Recibir dinero del cliente\n");
+    break;
+
+    default:
+    printf("No se encontro esa opci%cn, favor de elegir otra\n");
+        break;
+    }
+}
+
+
 int main(){
 
+float costolibro;
+	int si;
+	float Np;
+int no, cant, met;
 char usuario[LONGITUD + 1];
 char clave[LONGITUD + 1];
 int intento = 0;
@@ -129,8 +168,20 @@ else{
     break;
 
 case 2:
-printf("Venta de libro\n");
-//Funcion de venta
+printf("-------------------Registro venta cliente-------------------\n\n");
+        printf("%cCu%cntos libros vas a vender?: ", 168, 160);
+        scanf("%d", &cant);
+        float lib[1];
+        for (int i=0; i<cant; i++){
+        printf("Escribe el precio del libro %d: ", i+1);
+        scanf("%f", &lib[i]);
+    }
+    float r = venta(cant, lib);    
+    printf("Selecciona un m%ctodo de pago\n", 130);
+    printf("1. Tarjeta\n");
+    printf("2. Efectivo\n");
+    scanf("%d", &met);
+    metodo(met);
 printf("Ingresa 1 para volver al menu\n");
 scanf("%d", &respuesta);
 if (respuesta==0)
@@ -143,9 +194,7 @@ else{
     break;
 
 case 3:
-float costolibro;
-	int si;
-	float Np;
+    
 	while (si != 2)
     {
 	printf("-------------------Compra de libros-------------------\n\n");
